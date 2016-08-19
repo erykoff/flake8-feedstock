@@ -1,7 +1,7 @@
 {%set name = "flake8" %}
-{%set version = "2.6.2" %}
+{%set version = "3.0.4" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "231cd86194aaec4bdfaa553ae1a1cd9b7b4558332fbc10136c044940d587a778" %}
+{%set hash_val = "b4c210c998f07d6ff24325dd91fbc011f2c37bcd6bf576b188de01d8656e970d" %}
 
 package:
   name: {{ name }}
@@ -41,3 +41,4 @@ about:
 extra:
   recipe-maintainers:
     - sigmavirus24
+    - croth1
