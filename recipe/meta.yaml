@@ -35,7 +35,8 @@ test:
   imports:
     - {{ name }}
   commands:
-    - flake8 ${SRC_DIR}/setup.py ${SRC_DIR}/src/flake8/ ${SRC_DIR}/tests
+    - flake8 ${SRC_DIR}/setup.py ${SRC_DIR}/src/flake8 ${SRC_DIR}/tests  # [unix]
+    - flake8 %SRC_DIR%\\setup.py %SRC_DIR%\\src\\flake8 %SRC_DIR%\\tests  # [win]
 
 about:
   home: http://flake8.pycqa.org/
