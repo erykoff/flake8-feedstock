@@ -1,7 +1,7 @@
 {%set name = "flake8" %}
-{%set version = "3.2.0" %}
+{%set version = "3.2.1" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "f4c3c0aeb8018319993b2c47a2491fb7ea8b3a51c7a86cba38301ae1561b364e" %}
+{%set hash_val = "c7c460b5aff3a2063c798a77af18ec70af3941d35a22e2e76965e3c0e0b36055" %}
 
 package:
   name: {{ name }}
@@ -35,7 +35,8 @@ test:
   imports:
     - {{ name }}
   commands:
-    - flake8 ${SRC_DIR}/setup.py ${SRC_DIR}/src/flake8/ ${SRC_DIR}/tests
+    - flake8 ${SRC_DIR}/setup.py ${SRC_DIR}/src/flake8 ${SRC_DIR}/tests  # [unix]
+    - flake8 %SRC_DIR%\\setup.py %SRC_DIR%\\src\\flake8 %SRC_DIR%\\tests  # [win]
 
 about:
   home: http://flake8.pycqa.org/
