@@ -18,25 +18,31 @@ build:
 
 requirements:
   build:
+    - pytest-runner
     - python
     - setuptools
-    - pytest-runner
 
   run:
+    - configparser  # [py2k]
+    - enum34  # [py2k or py33]
+    - mccabe >=0.5.0,<0.6.0
+    - pycodestyle >=2.0.0,<2.3.0
+    - pyflakes >=0.8.1,!=1.2.0,!=1.2.1,!=1.2.2,<1.4.0
     - python
     - setuptools
-    - mccabe >=0.5,<0.6
-    - pycodestyle >=2.0,<2.3
-    - pyflakes >=1.2.3,<1.4
-    - enum34  # [py2k or py33]
-    - configparser  # [py2k]
 
 test:
   imports:
     - {{ name }}
+  source_files:
+    - src/flake8
+    - tests/integration
+    - tests/unit
+    - setup.py
+
   commands:
-    - flake8 ${SRC_DIR}/setup.py ${SRC_DIR}/src/flake8 ${SRC_DIR}/tests  # [unix]
-    - flake8 %SRC_DIR%\\setup.py %SRC_DIR%\\src\\flake8 %SRC_DIR%\\tests  # [win]
+    - flake8 src/flake8 tests/integration tests/unit setup.py  # [unix]
+    - flake8 src\\flake8 tests\\integration tests\\unit setup.py  # [win]
 
 about:
   home: http://flake8.pycqa.org/
@@ -52,3 +58,4 @@ extra:
     - sigmavirus24
     - croth1
     - dopplershift
+    - goanpeca
