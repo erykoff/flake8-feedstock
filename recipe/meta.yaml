@@ -1,7 +1,7 @@
 {%set name = "flake8" %}
-{%set version = "3.4.1" %}
+{%set version = "3.5.0" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "c20044779ff848f67f89c56a0e4624c04298cd476e25253ac0c36f910a1a11d8" %}
+{%set hash_val = "7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0" %}
 
 package:
   name: {{ name }}
@@ -27,7 +27,7 @@ requirements:
     - enum34  # [py2k or py33]
     - mccabe >=0.6.0,<0.7.0
     - pycodestyle >=2.0.0,<2.4.0
-    - pyflakes >=1.5.0,<1.6.0
+    - pyflakes >=1.5.0,<1.7.0
     - python
     - setuptools >=30.0.0
 
