@@ -1,39 +1,36 @@
-{%set name = "flake8" %}
-{%set version = "3.5.0" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0" %}
+{% set version = "3.5.0" %}
 
 package:
-  name: {{ name }}
+  name: flake8
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.io/packages/source/f/flake8/flake8-{{ version }}.tar.gz
+  sha256: 7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0
+  patches:
+    # Backport fix so we are compatible with pycodestyle 2.4.0
+    - 68782675b7f00c5d24c24e424efd1fbcb0705224.patch
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   build:
-    - pytest-runner
     - python
-    - setuptools >=30.0.0
-
+    - pip
+    - pytest-runner
   run:
     - configparser  # [py2k]
     - enum34  # [py2k or py33]
     - mccabe >=0.6.0,<0.7.0
-    - pycodestyle >=2.0.0,<2.4.0
+    - pycodestyle >=2.0.0,<2.5.0
     - pyflakes >=1.5.0,<1.7.0
     - python
     - setuptools >=30.0.0
-
 test:
   imports:
-    - {{ name }}
+    - flake8
   source_files:
     - src/flake8
     - tests/integration
