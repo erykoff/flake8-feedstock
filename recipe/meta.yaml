@@ -12,7 +12,7 @@ source:
     - 68782675b7f00c5d24c24e424efd1fbcb0705224.patch
 
 build:
-  number: 0
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
