@@ -1,4 +1,4 @@
-{% set version = "3.5.0" %}
+{% set version = "3.6.0" %}
 
 package:
   name: flake8
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/flake8/flake8-{{ version }}.tar.gz
-  sha256: 7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0
+  sha256: 6a35f5b8761f45c5513e3405f110a86bea57982c3b75b766ce7b65217abe1670
   patches:
     # Backport fix so we are compatible with pycodestyle 2.4.0
     - 68782675b7f00c5d24c24e424efd1fbcb0705224.patch
