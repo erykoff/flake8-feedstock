@@ -21,8 +21,8 @@ requirements:
     - configparser  # [py2k]
     - enum34  # [py2k or py33]
     - mccabe >=0.6.0,<0.7.0
-    - pycodestyle >=2.0.0,<2.5.0
-    - pyflakes >=1.5.0,<1.7.0
+    - pycodestyle >=2.4.0,<2.5.0
+    - pyflakes >=2.0.0,<2.1.0
     - python
     - setuptools >=30.0.0
 test:
