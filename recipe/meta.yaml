@@ -35,8 +35,8 @@ test:
     - setup.py
 
   commands:
-    - flake8 src/flake8 tests/integration tests/unit setup.py  # [unix]
-    - flake8 src\\flake8 tests\\integration tests\\unit setup.py  # [win]
+    - flake8 --ignore=D203,W503,E203 src/flake8 tests/integration tests/unit setup.py  # [unix]
+    - flake8 --ignore=D203,W503,E203 src\\flake8 tests\\integration tests\\unit setup.py  # [win]
 
 about:
   home: http://flake8.pycqa.org/
