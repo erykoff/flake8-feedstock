@@ -19,10 +19,12 @@ requirements:
     - pytest-runner
   run:
     - configparser  # [py2k]
-    - enum34  # [py2k or py33]
+    - enum34  # [py2k]
+    - typing  # [py2k]
+    - entrypoints >=0.3.0,<0.4.0
     - mccabe >=0.6.0,<0.7.0
-    - pycodestyle >=2.4.0,<2.5.0
-    - pyflakes >=2.0.0,<2.1.0
+    - pycodestyle >=2.5.0,<2.6.0
+    - pyflakes >=2.1.0,<2.2.0
     - python
     - setuptools >=30.0.0
 test:
