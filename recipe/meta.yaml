@@ -1,4 +1,4 @@
-{% set version = "3.6.0" %}
+{% set version = "3.7.0" %}
 
 package:
   name: flake8
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/flake8/flake8-{{ version }}.tar.gz
-  sha256: 6a35f5b8761f45c5513e3405f110a86bea57982c3b75b766ce7b65217abe1670
+  sha256: 2baac1c277d917f3e01ce17a60dcfad4a4ce13a2c5d50a15d0811302a3bdf7aa
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
@@ -19,10 +19,12 @@ requirements:
     - pytest-runner
   run:
     - configparser  # [py2k]
-    - enum34  # [py2k or py33]
+    - enum34  # [py2k]
+    - typing  # [py2k]
+    - entrypoints >=0.3.0,<0.4.0
     - mccabe >=0.6.0,<0.7.0
-    - pycodestyle >=2.4.0,<2.5.0
-    - pyflakes >=2.0.0,<2.1.0
+    - pycodestyle >=2.5.0,<2.6.0
+    - pyflakes >=2.1.0,<2.2.0
     - python
     - setuptools >=30.0.0
 test:
