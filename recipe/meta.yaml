@@ -19,6 +19,7 @@ requirements:
     - pytest-runner
   run:
     - configparser  # [py2k]
+    - functools32  # [py2k]
     - enum34  # [py2k]
     - typing  # [py2k]
     - entrypoints >=0.3.0,<0.4.0
