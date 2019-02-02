@@ -1,4 +1,4 @@
-{% set version = "3.7.3" %}
+{% set version = "3.7.4" %}
 
 package:
   name: flake8
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/flake8/flake8-{{ version }}.tar.gz
-  sha256: b70f13ee944e536f22becfd716802b1f2fa4ca5ff7aea2c6423567569004f732
+  sha256: 09b9bb539920776da542e67a570a5df96ff933c9a08b62cfae920bcc789e4383
 
 build:
   number: 0
@@ -19,6 +19,7 @@ requirements:
     - pytest-runner
   run:
     - configparser  # [py2k]
+    - functools32  # [py2k]
     - enum34  # [py2k]
     - typing  # [py2k]
     - entrypoints >=0.3.0,<0.4.0
