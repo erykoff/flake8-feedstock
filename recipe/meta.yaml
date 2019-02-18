@@ -1,4 +1,4 @@
-{% set version = "3.7.5" %}
+{% set version = "3.7.6" %}
 
 package:
   name: flake8
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/flake8/flake8-{{ version }}.tar.gz
-  sha256: fd9ddf503110bf3d8b1d270e8c673aab29ccb3dd6abf29bae1f54e5116ab4a91
+  sha256: 6d8c66a65635d46d54de59b027a1dda40abbe2275b3164b634835ac9c13fd048
 
 build:
   number: 0
