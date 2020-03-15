@@ -9,7 +9,7 @@ source:
   sha256: 45681a117ecc81e870cbf1262835ae4af5e7a8b08e40b944a8a6e6b895914cfb
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - flake8 = flake8.main.cli:main
