@@ -19,16 +19,13 @@ requirements:
     - python
     - pip
     - pytest-runner
+    - setuptools >=30.0.0
   run:
-    - configparser  # [py2k]
-    - functools32  # [py2k]
-    - enum34  # [py2k]
-    - typing  # [py2k]
-    - entrypoints >=0.3.0,<0.4.0
     - mccabe >=0.6.0,<0.7.0
-    - pycodestyle >=2.5.0,<2.6.0
-    - pyflakes >=2.1.0,<2.2.0
+    - pycodestyle >=2.6.0,<2.7.0
+    - pyflakes >=2.2.0,<2.3.0
     - python
+    - importlib-metadata
     - setuptools >=30.0.0
 test:
   imports:
