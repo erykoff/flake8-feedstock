@@ -1,4 +1,4 @@
-{% set version = "3.7.9" %}
+{% set version = "3.8.1" %}
 
 package:
   name: flake8
@@ -6,11 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/flake8/flake8-{{ version }}.tar.gz
-  sha256: 45681a117ecc81e870cbf1262835ae4af5e7a8b08e40b944a8a6e6b895914cfb
+  sha256: ea6623797bf9a52f4c9577d780da0bb17d65f870213f7b5bcc9fca82540c31d5
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - flake8 = flake8.main.cli:main
 
@@ -19,16 +20,13 @@ requirements:
     - python
     - pip
     - pytest-runner
+    - setuptools >=30.0.0
   run:
-    - configparser  # [py2k]
-    - functools32  # [py2k]
-    - enum34  # [py2k]
-    - typing  # [py2k]
-    - entrypoints >=0.3.0,<0.4.0
     - mccabe >=0.6.0,<0.7.0
-    - pycodestyle >=2.5.0,<2.6.0
-    - pyflakes >=2.1.0,<2.2.0
+    - pycodestyle >=2.6.0,<2.7.0
+    - pyflakes >=2.2.0,<2.3.0
     - python
+    - importlib-metadata
     - setuptools >=30.0.0
 test:
   imports:
@@ -48,7 +46,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Your Tool For Style Guide Enforcement'
+  summary: Your Tool For Style Guide Enforcement
   doc_url: http://flake8.pycqa.org/
   dev_url: https://gitlab.com/pycqa/flake8
 
