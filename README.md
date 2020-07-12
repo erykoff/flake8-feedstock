@@ -5,7 +5,7 @@ Home: http://flake8.pycqa.org/
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Your Tool For Style Guide Enforcement
 
