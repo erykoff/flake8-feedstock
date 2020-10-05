@@ -1,4 +1,4 @@
-{% set version = "3.8.3" %}
+{% set version = "3.8.4" %}
 
 package:
   name: flake8
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/flake8/flake8-{{ version }}.tar.gz
-  sha256: f04b9fcbac03b0a3e58c0ab3a0ecc462e023a9faf046d57794184028123aa208
+  sha256: aadae8761ec651813c24be05c6f7b4680857ef6afaae4651a4eccaef97ce6c3b
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -19,7 +19,6 @@ requirements:
   build:
     - python >=3.5
     - pip
-    - pytest-runner
     - setuptools >=30.0.0
   run:
     - mccabe >=0.6.0,<0.7.0
